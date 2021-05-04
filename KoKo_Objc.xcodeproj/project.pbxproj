@@ -7,8 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F941023626413F7A00722108 /* KokoTabBar.m in Sources */ = {isa = PBXBuildFile; fileRef = F941023526413F7A00722108 /* KokoTabBar.m */; };
+		F9410242264175D600722108 /* FriendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9410241264175D600722108 /* FriendCell.m */; };
+		F9410249264178D100722108 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = F9410248264178D100722108 /* APIManager.m */; };
+		F941024E26417AA800722108 /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F941024D26417AA800722108 /* User.m */; };
+		F941025226417B1500722108 /* Friend.m in Sources */ = {isa = PBXBuildFile; fileRef = F941025126417B1500722108 /* Friend.m */; };
 		F9FB681826412E5D000EAB4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB681726412E5D000EAB4A /* AppDelegate.m */; };
-		F9FB681B26412E5D000EAB4A /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB681A26412E5D000EAB4A /* SceneDelegate.m */; };
 		F9FB681E26412E5D000EAB4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB681D26412E5D000EAB4A /* ViewController.m */; };
 		F9FB682126412E5D000EAB4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FB681F26412E5D000EAB4A /* Main.storyboard */; };
 		F9FB682326412E5E000EAB4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9FB682226412E5E000EAB4A /* Assets.xcassets */; };
@@ -18,11 +22,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F941023426413F7A00722108 /* KokoTabBar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KokoTabBar.h; sourceTree = "<group>"; };
+		F941023526413F7A00722108 /* KokoTabBar.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KokoTabBar.m; sourceTree = "<group>"; };
+		F941023E264175AA00722108 /* FriendCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendCell.xib; sourceTree = "<group>"; };
+		F941023F264175AB00722108 /* FriendInvitionCard.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendInvitionCard.xib; sourceTree = "<group>"; };
+		F9410240264175D600722108 /* FriendCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendCell.h; sourceTree = "<group>"; };
+		F9410241264175D600722108 /* FriendCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendCell.m; sourceTree = "<group>"; };
+		F9410247264178C100722108 /* APIManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIManager.h; sourceTree = "<group>"; };
+		F9410248264178D100722108 /* APIManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIManager.m; sourceTree = "<group>"; };
+		F941024C26417AA800722108 /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		F941024D26417AA800722108 /* User.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		F941025026417B1500722108 /* Friend.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Friend.h; sourceTree = "<group>"; };
+		F941025126417B1500722108 /* Friend.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Friend.m; sourceTree = "<group>"; };
 		F9FB681326412E5D000EAB4A /* KoKo_Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoKo_Objc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9FB681626412E5D000EAB4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9FB681726412E5D000EAB4A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F9FB681926412E5D000EAB4A /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
-		F9FB681A26412E5D000EAB4A /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
 		F9FB681C26412E5D000EAB4A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		F9FB681D26412E5D000EAB4A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F9FB682026412E5D000EAB4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,8 +44,8 @@
 		F9FB682526412E5E000EAB4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9FB682726412E5E000EAB4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9FB682826412E5E000EAB4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		F9FB683026412F02000EAB4A /* MainTabVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MainTabVC.h; path = Page/MainTab/MainTabVC.h; sourceTree = "<group>"; };
-		F9FB683126412F02000EAB4A /* MainTabVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = MainTabVC.m; path = Page/MainTab/MainTabVC.m; sourceTree = "<group>"; };
+		F9FB683126412F02000EAB4A /* MainTabVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainTabVC.m; sourceTree = "<group>"; };
+		F9FB683526412FE4000EAB4A /* MainTabVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabVC.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +59,62 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F941023B2641756E00722108 /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				F941023C2641758E00722108 /* Views */,
+			);
+			path = Friends;
+			sourceTree = "<group>";
+		};
+		F941023C2641758E00722108 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F941023D2641759D00722108 /* Cells */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		F941023D2641759D00722108 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F941023E264175AA00722108 /* FriendCell.xib */,
+				F941023F264175AB00722108 /* FriendInvitionCard.xib */,
+				F9410240264175D600722108 /* FriendCell.h */,
+				F9410241264175D600722108 /* FriendCell.m */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F94102442641763700722108 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F9410246264178AC00722108 /* Manager */,
+				F94102452641764300722108 /* Entities */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F94102452641764300722108 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				F941024C26417AA800722108 /* User.h */,
+				F941024D26417AA800722108 /* User.m */,
+				F941025026417B1500722108 /* Friend.h */,
+				F941025126417B1500722108 /* Friend.m */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		F9410246264178AC00722108 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				F9410247264178C100722108 /* APIManager.h */,
+				F9410248264178D100722108 /* APIManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
 		F9FB680A26412E5D000EAB4A = {
 			isa = PBXGroup;
 			children = (
@@ -66,19 +136,37 @@
 			children = (
 				F9FB681626412E5D000EAB4A /* AppDelegate.h */,
 				F9FB681726412E5D000EAB4A /* AppDelegate.m */,
-				F9FB681926412E5D000EAB4A /* SceneDelegate.h */,
-				F9FB681A26412E5D000EAB4A /* SceneDelegate.m */,
 				F9FB681C26412E5D000EAB4A /* ViewController.h */,
 				F9FB681D26412E5D000EAB4A /* ViewController.m */,
 				F9FB681F26412E5D000EAB4A /* Main.storyboard */,
-				F9FB683026412F02000EAB4A /* MainTabVC.h */,
-				F9FB683126412F02000EAB4A /* MainTabVC.m */,
+				F9FB683626412FE8000EAB4A /* Page */,
+				F94102442641763700722108 /* Model */,
 				F9FB682226412E5E000EAB4A /* Assets.xcassets */,
 				F9FB682426412E5E000EAB4A /* LaunchScreen.storyboard */,
 				F9FB682726412E5E000EAB4A /* Info.plist */,
 				F9FB682826412E5E000EAB4A /* main.m */,
 			);
 			path = KoKo_Objc;
+			sourceTree = "<group>";
+		};
+		F9FB683626412FE8000EAB4A /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				F941023B2641756E00722108 /* Friends */,
+				F9FB683826412FEE000EAB4A /* MainTab */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
+		F9FB683826412FEE000EAB4A /* MainTab */ = {
+			isa = PBXGroup;
+			children = (
+				F9FB683526412FE4000EAB4A /* MainTabVC.h */,
+				F9FB683126412F02000EAB4A /* MainTabVC.m */,
+				F941023426413F7A00722108 /* KokoTabBar.h */,
+				F941023526413F7A00722108 /* KokoTabBar.m */,
+			);
+			path = MainTab;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,11 +238,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F941024E26417AA800722108 /* User.m in Sources */,
 				F9FB681E26412E5D000EAB4A /* ViewController.m in Sources */,
 				F9FB681826412E5D000EAB4A /* AppDelegate.m in Sources */,
+				F941025226417B1500722108 /* Friend.m in Sources */,
 				F9FB683226412F02000EAB4A /* MainTabVC.m in Sources */,
+				F9410242264175D600722108 /* FriendCell.m in Sources */,
+				F9410249264178D100722108 /* APIManager.m in Sources */,
+				F941023626413F7A00722108 /* KokoTabBar.m in Sources */,
 				F9FB682926412E5E000EAB4A /* main.m in Sources */,
-				F9FB681B26412E5D000EAB4A /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +392,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 284Y9W6F8Y;
 				INFOPLIST_FILE = KoKo_Objc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -318,6 +411,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 284Y9W6F8Y;
 				INFOPLIST_FILE = KoKo_Objc/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

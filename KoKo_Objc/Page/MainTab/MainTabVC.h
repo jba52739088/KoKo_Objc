@@ -7,9 +7,25 @@
 
 #import <UIKit/UIKit.h>
 
+
+//#define TabBarItemsString(enum) [@[@"Products",@"Friends",@"Home",@"Manage",@"Setting"] objectAtIndex:enum]
+//#define TabBarItemsImage(enum) [@[@"icTabbarProductsOff",@"icTabbarFriendsOn",@"icTabbarHomeOff",@"icTabbarManageOff",@"icTabbarSettingOff"] objectAtIndex:enum]
+
 NS_ASSUME_NONNULL_BEGIN
 
 @interface MainTabVC : UITabBarController
+
+typedef enum {
+    Products,
+    Friends,
+    Home,
+    Manage,
+    Setting,
+    TabBarItemCount
+} TabBarItems;
+
+extern NSString * _Nonnull const toString[TabBarItemCount];
+
 
 @end
 
