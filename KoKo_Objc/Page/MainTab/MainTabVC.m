@@ -7,7 +7,7 @@
 
 #import "MainTabVC.h"
 #import "APIManager.h"
-
+#import "FriendsVC.h"
 
 
 @interface MainTabVC ()
@@ -79,7 +79,7 @@
         if (item != Friends) {
             vc = [UIViewController new];
         }else {
-            vc = [UIViewController new]; ///
+            vc = [[FriendsVC new] initWithNibName: @"FriendsVC" bundle: nil]; ///
         }
         UIImage *itemImage = [[UIImage imageNamed: toImageName[item]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
         UITabBarItem *tabItem = [[UITabBarItem new] initWithTitle:NULL image:itemImage tag:item];
