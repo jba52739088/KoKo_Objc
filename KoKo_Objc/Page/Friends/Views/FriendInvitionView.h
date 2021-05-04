@@ -14,7 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @protocol InvitionViewDelegate <NSObject>
 
 @required
--(void)onGetHeight: (NSNumber *)height inView: (FriendInvitionView *)view;
+-(void)onGetHeight: (CGFloat)height inView: (FriendInvitionView *)view;
 @end
 
 
@@ -26,8 +26,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak,nonatomic) id<InvitionViewDelegate> delegate;
 
--(void)configDataList: (NSMutableArray<Friend *>*)list;
 
+-(void)configDataList: (NSMutableArray<Friend *>*)list;
+-(BOOL) isExpanded_;
 @end
 
 

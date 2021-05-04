@@ -120,6 +120,7 @@ NSMutableArray<Friend *> *_friendList;
     }];
 }
 
+// MARK: - private
 
 -(void)loadAPI: (APIInfo)type withCompletionHandler:(void (^)(NSDictionary *dictionary))completion {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];

@@ -11,7 +11,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface FriendsVC : UIViewController
+@interface FriendsVC : UIViewController <InvitionViewDelegate, FriendsViewDelegate>
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *minYTopView;
 @property (weak, nonatomic) IBOutlet UIStackView *viewTop;

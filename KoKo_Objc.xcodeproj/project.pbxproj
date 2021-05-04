@@ -23,6 +23,10 @@
 		F9451DD92641B683003927E8 /* FriendInvitionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9451DB426419AFA003927E8 /* FriendInvitionView.xib */; };
 		F9451DDB2641B687003927E8 /* FriendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F941023E264175AA00722108 /* FriendCell.xib */; };
 		F9451DDD2641B689003927E8 /* FriendInvitionCard.xib in Resources */ = {isa = PBXBuildFile; fileRef = F941023F264175AB00722108 /* FriendInvitionCard.xib */; };
+		F9451DE22641B756003927E8 /* FriendsVM.m in Sources */ = {isa = PBXBuildFile; fileRef = F9451DE12641B756003927E8 /* FriendsVM.m */; };
+		F9451DE72641B85F003927E8 /* FirstVM.m in Sources */ = {isa = PBXBuildFile; fileRef = F9451DE62641B85F003927E8 /* FirstVM.m */; };
+		F9451DEB2641BE5D003927E8 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = F9451DEA2641BE5D003927E8 /* Helper.m */; };
+		F9451DF12641DF50003927E8 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F9451DF02641DF50003927E8 /* FirstVC.m */; };
 		F9FB681826412E5D000EAB4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB681726412E5D000EAB4A /* AppDelegate.m */; };
 		F9FB681E26412E5D000EAB4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB681D26412E5D000EAB4A /* ViewController.m */; };
 		F9FB682126412E5D000EAB4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FB681F26412E5D000EAB4A /* Main.storyboard */; };
@@ -59,6 +63,14 @@
 		F9451DCC2641B530003927E8 /* FriendsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsVC.xib; sourceTree = "<group>"; };
 		F9451DCD2641B546003927E8 /* FriendsVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsVC.h; sourceTree = "<group>"; };
 		F9451DCE2641B546003927E8 /* FriendsVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendsVC.m; sourceTree = "<group>"; };
+		F9451DE02641B756003927E8 /* FriendsVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FriendsVM.h; sourceTree = "<group>"; };
+		F9451DE12641B756003927E8 /* FriendsVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FriendsVM.m; sourceTree = "<group>"; };
+		F9451DE52641B85F003927E8 /* FirstVM.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstVM.h; sourceTree = "<group>"; };
+		F9451DE62641B85F003927E8 /* FirstVM.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVM.m; sourceTree = "<group>"; };
+		F9451DE92641BE5D003927E8 /* Helper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Helper.h; sourceTree = "<group>"; };
+		F9451DEA2641BE5D003927E8 /* Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
+		F9451DEF2641DF50003927E8 /* FirstVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
+		F9451DF02641DF50003927E8 /* FirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
 		F9FB681326412E5D000EAB4A /* KoKo_Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoKo_Objc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9FB681626412E5D000EAB4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9FB681726412E5D000EAB4A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -157,8 +169,30 @@
 		F9451DBA2641A079003927E8 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				F9451DE92641BE5D003927E8 /* Helper.h */,
+				F9451DEA2641BE5D003927E8 /* Helper.m */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		F9451DDF2641B726003927E8 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F9451DE52641B85F003927E8 /* FirstVM.h */,
+				F9451DE62641B85F003927E8 /* FirstVM.m */,
+				F9451DE02641B756003927E8 /* FriendsVM.h */,
+				F9451DE12641B756003927E8 /* FriendsVM.m */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F9451DEE2641DF3B003927E8 /* First */ = {
+			isa = PBXGroup;
+			children = (
+				F9451DEF2641DF50003927E8 /* FirstVC.h */,
+				F9451DF02641DF50003927E8 /* FirstVC.m */,
+			);
+			path = First;
 			sourceTree = "<group>";
 		};
 		F9FB680A26412E5D000EAB4A = {
@@ -186,6 +220,7 @@
 				F9FB681D26412E5D000EAB4A /* ViewController.m */,
 				F9FB681F26412E5D000EAB4A /* Main.storyboard */,
 				F9FB683626412FE8000EAB4A /* Page */,
+				F9451DDF2641B726003927E8 /* ViewModel */,
 				F94102442641763700722108 /* Model */,
 				F9451DBA2641A079003927E8 /* Helper */,
 				F9FB682226412E5E000EAB4A /* Assets.xcassets */,
@@ -199,6 +234,7 @@
 		F9FB683626412FE8000EAB4A /* Page */ = {
 			isa = PBXGroup;
 			children = (
+				F9451DEE2641DF3B003927E8 /* First */,
 				F941023B2641756E00722108 /* Friends */,
 				F9FB683826412FEE000EAB4A /* MainTab */,
 			);
@@ -292,19 +328,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				F941024E26417AA800722108 /* User.m in Sources */,
+				F9451DF12641DF50003927E8 /* FirstVC.m in Sources */,
 				F9FB681E26412E5D000EAB4A /* ViewController.m in Sources */,
 				F9FB681826412E5D000EAB4A /* AppDelegate.m in Sources */,
 				F941025226417B1500722108 /* Friend.m in Sources */,
 				F9FB683226412F02000EAB4A /* MainTabVC.m in Sources */,
+				F9451DEB2641BE5D003927E8 /* Helper.m in Sources */,
 				F9451DC92641B48D003927E8 /* NoneFriendView.m in Sources */,
 				F9451DCF2641B546003927E8 /* FriendsVC.m in Sources */,
 				F9410242264175D600722108 /* FriendCell.m in Sources */,
 				F9410249264178D100722108 /* APIManager.m in Sources */,
+				F9451DE22641B756003927E8 /* FriendsVM.m in Sources */,
 				F9451DB726419B14003927E8 /* FriendInvitionView.m in Sources */,
 				F941023626413F7A00722108 /* KokoTabBar.m in Sources */,
 				F9FB682926412E5E000EAB4A /* main.m in Sources */,
 				F9451DC22641AE0B003927E8 /* FriendsView.m in Sources */,
 				F9451DB026419982003927E8 /* FriendInvitionCard.m in Sources */,
+				F9451DE72641B85F003927E8 /* FirstVM.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

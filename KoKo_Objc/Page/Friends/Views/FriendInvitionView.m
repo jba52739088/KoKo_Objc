@@ -32,6 +32,10 @@ BOOL isExpanded = false;
     return self;
 }
 
+-(BOOL) isExpanded_ {
+    return isExpanded;
+}
+
 -(void)configDataList: (NSMutableArray<Friend *>*)list {
     invitionList = list;
     [self configViewHeight];
@@ -53,18 +57,18 @@ BOOL isExpanded = false;
 }
 
 -(void)configViewHeight {
-    NSNumber *height = 0;
+    CGFloat height = 0.f;
     if (invitionList.count == 0) {
         // 無資料
-        height = @14.0;
+        height = 14.f;
     }else if (invitionList.count == 1) {
         // 只有一筆資料無論開合高度一樣
-        height = @120.0;
+        height = 120.f;
     }else if (!isExpanded) {
         // 無展開時高度一樣
-        height = @130.0;
+        height = 130.f;
     }else {
-        height = @190.0;
+        height = 190.f;
     }
     [_delegate onGetHeight:height inView:self];
 }
