@@ -27,6 +27,8 @@
 		F9451DE72641B85F003927E8 /* FirstVM.m in Sources */ = {isa = PBXBuildFile; fileRef = F9451DE62641B85F003927E8 /* FirstVM.m */; };
 		F9451DEB2641BE5D003927E8 /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = F9451DEA2641BE5D003927E8 /* Helper.m */; };
 		F9451DF12641DF50003927E8 /* FirstVC.m in Sources */ = {isa = PBXBuildFile; fileRef = F9451DF02641DF50003927E8 /* FirstVC.m */; };
+		F9451DFB2642A467003927E8 /* RoundRectView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9451DFA2642A467003927E8 /* RoundRectView.m */; };
+		F9451E002642A62C003927E8 /* RoundRectButton.m in Sources */ = {isa = PBXBuildFile; fileRef = F9451DFF2642A62C003927E8 /* RoundRectButton.m */; };
 		F9FB681826412E5D000EAB4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB681726412E5D000EAB4A /* AppDelegate.m */; };
 		F9FB681E26412E5D000EAB4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9FB681D26412E5D000EAB4A /* ViewController.m */; };
 		F9FB682126412E5D000EAB4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9FB681F26412E5D000EAB4A /* Main.storyboard */; };
@@ -71,6 +73,10 @@
 		F9451DEA2641BE5D003927E8 /* Helper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Helper.m; sourceTree = "<group>"; };
 		F9451DEF2641DF50003927E8 /* FirstVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstVC.h; sourceTree = "<group>"; };
 		F9451DF02641DF50003927E8 /* FirstVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstVC.m; sourceTree = "<group>"; };
+		F9451DF92642A467003927E8 /* RoundRectView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundRectView.h; sourceTree = "<group>"; };
+		F9451DFA2642A467003927E8 /* RoundRectView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundRectView.m; sourceTree = "<group>"; };
+		F9451DFE2642A62C003927E8 /* RoundRectButton.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RoundRectButton.h; sourceTree = "<group>"; };
+		F9451DFF2642A62C003927E8 /* RoundRectButton.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RoundRectButton.m; sourceTree = "<group>"; };
 		F9FB681326412E5D000EAB4A /* KoKo_Objc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KoKo_Objc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9FB681626412E5D000EAB4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9FB681726412E5D000EAB4A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -169,6 +175,7 @@
 		F9451DBA2641A079003927E8 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				F9451DF82642A445003927E8 /* Component */,
 				F9451DE92641BE5D003927E8 /* Helper.h */,
 				F9451DEA2641BE5D003927E8 /* Helper.m */,
 			);
@@ -193,6 +200,17 @@
 				F9451DF02641DF50003927E8 /* FirstVC.m */,
 			);
 			path = First;
+			sourceTree = "<group>";
+		};
+		F9451DF82642A445003927E8 /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				F9451DF92642A467003927E8 /* RoundRectView.h */,
+				F9451DFA2642A467003927E8 /* RoundRectView.m */,
+				F9451DFE2642A62C003927E8 /* RoundRectButton.h */,
+				F9451DFF2642A62C003927E8 /* RoundRectButton.m */,
+			);
+			path = Component;
 			sourceTree = "<group>";
 		};
 		F9FB680A26412E5D000EAB4A = {
@@ -329,6 +347,7 @@
 			files = (
 				F941024E26417AA800722108 /* User.m in Sources */,
 				F9451DF12641DF50003927E8 /* FirstVC.m in Sources */,
+				F9451E002642A62C003927E8 /* RoundRectButton.m in Sources */,
 				F9FB681E26412E5D000EAB4A /* ViewController.m in Sources */,
 				F9FB681826412E5D000EAB4A /* AppDelegate.m in Sources */,
 				F941025226417B1500722108 /* Friend.m in Sources */,
@@ -340,6 +359,7 @@
 				F9410249264178D100722108 /* APIManager.m in Sources */,
 				F9451DE22641B756003927E8 /* FriendsVM.m in Sources */,
 				F9451DB726419B14003927E8 /* FriendInvitionView.m in Sources */,
+				F9451DFB2642A467003927E8 /* RoundRectView.m in Sources */,
 				F941023626413F7A00722108 /* KokoTabBar.m in Sources */,
 				F9FB682926412E5E000EAB4A /* main.m in Sources */,
 				F9451DC22641AE0B003927E8 /* FriendsView.m in Sources */,

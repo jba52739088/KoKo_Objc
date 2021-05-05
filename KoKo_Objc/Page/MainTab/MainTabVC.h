@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MainTabVC : UITabBarController
+@interface MainTabVC : UITabBarController <UITabBarControllerDelegate>
 
 typedef enum {
     Products,

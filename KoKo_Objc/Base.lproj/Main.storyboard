@@ -54,15 +54,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Luw-WD-UGZ">
                                 <rect key="frame" x="50" y="374.5" width="314" height="157"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWO-uQ-wPT">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AWO-uQ-wPT" customClass="RoundRectButton">
                                         <rect key="frame" x="0.0" y="0.0" width="314" height="39"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="無好友">
                                             <color key="titleColor" name="hotPink"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="3"/>
+                                                <real key="value" value="0.0"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="1"/>
@@ -75,8 +76,9 @@
                                             <action selector="onClickDemoBtn:" destination="GPC-NN-6KB" eventType="touchUpInside" id="TgZ-uG-bSt"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMh-bX-zQe">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yMh-bX-zQe" customClass="RoundRectButton">
                                         <rect key="frame" x="0.0" y="59" width="314" height="39"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="好友列表無邀請">
                                             <color key="titleColor" name="hotPink"/>
@@ -96,8 +98,9 @@
                                             <action selector="onClickDemoBtn:" destination="GPC-NN-6KB" eventType="touchUpInside" id="Qnd-bd-aK5"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40O-5z-3tn">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="40O-5z-3tn" customClass="RoundRectButton">
                                         <rect key="frame" x="0.0" y="118" width="314" height="39"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                         <state key="normal" title="好友列表含邀請好友">
                                             <color key="titleColor" name="hotPink"/>
@@ -135,6 +138,17 @@
             <point key="canvasLocation" x="222" y="102"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="40O-5z-3tn">
+            <size key="intrinsicContentSize" width="201" height="39"/>
+        </designable>
+        <designable name="AWO-uQ-wPT">
+            <size key="intrinsicContentSize" width="67" height="39"/>
+        </designable>
+        <designable name="yMh-bX-zQe">
+            <size key="intrinsicContentSize" width="157" height="39"/>
+        </designable>
+    </designables>
     <resources>
         <namedColor name="hotPink">
             <color red="0.92500001192092896" green="0.0" blue="0.54900002479553223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

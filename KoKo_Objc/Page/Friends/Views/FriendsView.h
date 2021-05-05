@@ -29,6 +29,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (weak,nonatomic) id<FriendsViewDelegate> delegate;
 
+//-(void)configFriendsViewList: (NSMutableArray<Friend *> *)list delegate: (id<FriendsViewDelegate>)delegate;
 -(void)configFriendsViewList: (NSMutableArray<Friend *> *)list;
 
 @end

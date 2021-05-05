@@ -25,6 +25,7 @@ APIManager *apiManager;
 }
 
 -(void)requestApibyType: (DemoType)type completionHandler:(void (^_Nonnull)(BOOL))completion {
+    [apiManager setDemoType: type];
     if (type == EmptyFriend) {
         [self requestEmptyFriend:^{
             completion(true);

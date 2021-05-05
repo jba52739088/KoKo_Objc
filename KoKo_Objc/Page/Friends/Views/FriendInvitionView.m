@@ -10,8 +10,9 @@
 #import "Friend.h"
 
 @implementation FriendInvitionView
-
+@synthesize delegate;
 NSMutableArray<Friend *> *invitionList;
+
 BOOL isExpanded = false;
 
 -(instancetype)initWithFrame:(CGRect)frame
@@ -36,7 +37,9 @@ BOOL isExpanded = false;
     return isExpanded;
 }
 
+//-(void)configDataList: (NSMutableArray<Friend *>*)list delegate: (id<InvitionViewDelegate>)delegate{
 -(void)configDataList: (NSMutableArray<Friend *>*)list {
+//    self.delegate = delegate;
     invitionList = list;
     [self configViewHeight];
     [self.tableView reloadData];
@@ -70,7 +73,7 @@ BOOL isExpanded = false;
     }else {
         height = 190.f;
     }
-    [_delegate onGetHeight:height inView:self];
+    [delegate onGetHeight:height inView:self];
 }
 
 // MARK: - UITableViewDelegate, UITableViewDataSource
@@ -85,13 +88,13 @@ BOOL isExpanded = false;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FriendInvitionCard *cell = (FriendInvitionCard *) [tableView dequeueReusableCellWithIdentifier: @"cell"];
-    if (cell == nil) {
-        cell = [[FriendInvitionCard alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: @"cell"];
+    if (cell != nil) {
         BOOL scaling = !isExpanded && (indexPath.section != 0);
         [cell configInvitionCardData: invitionList[indexPath.section] scaling: scaling];
         CGFloat position = invitionList.count - indexPath.section;
         cell.content.layer.zPosition = position;
-        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+//        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        [cell setSelectionStyle: UITableViewCellSelectionStyleNone];
         cell.superview.clipsToBounds = NO;
     }
     return cell;
@@ -125,7 +128,7 @@ BOOL isExpanded = false;
         NSIndexPath *thisIndexPath = [tableView indexPathForCell: thisCell];
         [thisCell configCardSizeScaling: (!isExpanded && thisIndexPath.section != 0)];
     }
-    
+
     [UIView animateWithDuration: 0.3 animations:^{
         [tableView beginUpdates];
         [tableView endUpdates];

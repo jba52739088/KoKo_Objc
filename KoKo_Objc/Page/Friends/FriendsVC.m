@@ -17,15 +17,22 @@
 
 @implementation FriendsVC
 
+FriendInvitionView *invitionView;
+FriendsView *friendView;
+
 NoneFriendView *emptyFriendView;
 FriendsVM *viewModel;
+
+NSMutableArray<Friend *> *gotFriendList;
 NSMutableArray<Friend *> *allFriendList;
 NSMutableArray<Friend *> *allInvitionList;
 UIColor *whiteTwo;
 
 - (void)viewDidLoad {
+
     [super viewDidLoad];
-    
+    allFriendList = [NSMutableArray<Friend *> new];
+    allInvitionList = [NSMutableArray<Friend *> new];
     [self initView];
 }
 
@@ -34,6 +41,9 @@ UIColor *whiteTwo;
 // MARK: - private
 
 -(void)initView {
+    [self addInvitionFriendView];
+    [self addFriendView];
+    
     whiteTwo = [UIColor colorWithRed: 252/255.f green: 252/255.f blue: 252/255.f alpha:1.0];
     viewModel = [[FriendsVM alloc] initWithManager];
     [viewModel getUserDataWithCompletionHandler:^(User * _Nullable user) {
@@ -52,23 +62,25 @@ UIColor *whiteTwo;
 }
 
 -(void)onGetFriendList: (NSMutableArray<Friend *>*)friendList {
-    self.invitionView.backgroundColor = whiteTwo;
+    
+    allFriendList = [NSMutableArray new];
+    allInvitionList = [NSMutableArray new];
+    for (Friend *data in friendList) {
+        if (data.status != (NSInteger*)2) {
+            [allFriendList addObject: data];
+        }
+    }
+    
+    for (Friend *data in friendList) {
+        if (data.status == (NSInteger*)2) {
+            [allInvitionList addObject: data];
+        }
+    }
+    invitionView.backgroundColor = whiteTwo;
+    [friendView configFriendsViewList: allFriendList];
+    [invitionView configDataList: allInvitionList];
     if (friendList.count == 0) {
         [self addEmptyFriendView];
-
-    }else {
-        NSPredicate * predicate = [NSPredicate predicateWithFormat:@"status!=%@",@"2"];
-        [allFriendList = allFriendList filterUsingPredicate:predicate];
-        NSPredicate * invitionPredicate = [NSPredicate predicateWithFormat:@"status==%@",@"2"];
-        [allInvitionList = allInvitionList filterUsingPredicate:invitionPredicate];
-//        self.friendList = friendList.filter({$0.status != 2})
-//        self.invitionList = friendList.filter({$0.status == 2})
-        self.friendView.delegate = self;
-        self.invitionView.delegate = self;
-        [self.friendView configFriendsViewList: allFriendList];
-        [self.invitionView configDataList: allInvitionList];
-//        configFriendsView(list: self.friendList, delegate: self)
-//        self.invitionView.configData(list: self.invitionList, delegate: self)
     }
 }
 
@@ -78,54 +90,49 @@ UIColor *whiteTwo;
         NoneFriendView *emptyView = [[[NSBundle mainBundle] loadNibNamed: @"NoneFriendView" owner: self options: nil] objectAtIndex:0];
         emptyFriendView = emptyView;
     }
-    [self.friendView addSubview: emptyFriendView];
-    [emptyFriendView setTranslatesAutoresizingMaskIntoConstraints: false];
-    NSLayoutConstraint *topConstrain = [NSLayoutConstraint
-                                        constraintWithItem: emptyFriendView
-                                        attribute: NSLayoutAttributeTop
-                                        relatedBy: NSLayoutRelationEqual
-                                        toItem:self.friendView
-                                        attribute: NSLayoutAttributeTop multiplier: 1 constant:0];
-    NSLayoutConstraint *bottomConstrain = [NSLayoutConstraint
-                                        constraintWithItem: emptyFriendView
-                                        attribute: NSLayoutAttributeBottom
-                                        relatedBy: NSLayoutRelationEqual
-                                        toItem:self.friendView
-                                        attribute: NSLayoutAttributeBottom multiplier: 1 constant:0];
-    NSLayoutConstraint *leadingConstrain = [NSLayoutConstraint
-                                        constraintWithItem: emptyFriendView
-                                        attribute: NSLayoutAttributeLeading
-                                        relatedBy: NSLayoutRelationEqual
-                                        toItem:self.friendView
-                                        attribute: NSLayoutAttributeLeading multiplier: 1 constant:0];
-    NSLayoutConstraint *ttrailingConstrain = [NSLayoutConstraint
-                                        constraintWithItem: emptyFriendView
-                                        attribute: NSLayoutAttributeTrailing
-                                        relatedBy: NSLayoutRelationEqual
-                                        toItem:self.friendView
-                                        attribute: NSLayoutAttributeTrailing multiplier: 1 constant:0];
-    [self.friendView addConstraints:@[topConstrain, bottomConstrain, leadingConstrain, ttrailingConstrain]];
+    [self addFixViewFrom: emptyFriendView toView: self.friendViewContent];
+}
+
+-(void)addInvitionFriendView {
+//    [invitionView removeFromSuperview];
+    if (invitionView == NULL) {
+        FriendInvitionView *inviteView = [[FriendInvitionView alloc] initWithFrame: self.invitionViewContent.frame];
+        invitionView = inviteView;
+        invitionView.delegate = self;
+    }
+    [self addFixViewFrom: invitionView toView: self.invitionViewContent];
+}
+
+-(void)addFriendView {
+//    [friendView removeFromSuperview];
+    if (friendView == NULL) {
+        FriendsView *fridView = [[FriendsView alloc] initWithFrame: self.friendViewContent.frame];
+        friendView = fridView;
+        friendView.delegate = self;
+    }
+    [self addFixViewFrom: friendView toView: self.friendViewContent];
 }
 
 // MARK: - InvitionViewDelegate
 
-- (void)onGetHeight:(CGFloat)height inView:(FriendInvitionView *)view {
+- (void)onGetHeight: (CGFloat)height inView: (FriendInvitionView *)view {
     [UIView animateWithDuration: 0.3 animations:^{
-        self.invitionView.backgroundColor = self.invitionView.isExpanded_ ? UIColor.whiteColor : whiteTwo;
-        self.categoryView.backgroundColor = self.invitionView.isExpanded_ ? UIColor.whiteColor : whiteTwo;
+        invitionView.backgroundColor = invitionView.isExpanded_ ? UIColor.whiteColor : whiteTwo;
+        self.categoryView.backgroundColor = invitionView.isExpanded_ ? UIColor.whiteColor : whiteTwo;
         self.heightInvitionView.constant = height;
         [self.view layoutIfNeeded];
     }];
 }
 
+
 // MARK: - FriendsViewDelegate
-- (void)friendsViewShouldReloadIn:(FriendsView *)view {
+- (void)friendsViewShouldReloadIn: (FriendsView *)view {
     [viewModel requestFriendList:^(NSMutableArray<Friend *> * _Nonnull list) {
         [self onGetFriendList: list];
     }];
 }
 
-- (void)shouldMoveTop:(BOOL)moveTop forView:(FriendsView *)view {
+- (void)shouldMoveTop: (BOOL)moveTop forView:(FriendsView *)view {
     if (moveTop && self.minYTopView.constant == 0) {
         self.minYTopView.constant = -self.viewTop.frame.size.height;
     }else if (!moveTop && self.minYTopView.constant != 0) {
@@ -136,6 +143,36 @@ UIColor *whiteTwo;
     [UIView animateWithDuration: 0.3 animations:^{
         [self.view layoutIfNeeded];
     }];
+}
+
+- (void)addFixViewFrom: (UIView *)newView toView: (UIView *)contentView {
+    [contentView addSubview: newView];
+    [newView setTranslatesAutoresizingMaskIntoConstraints: false];
+    NSLayoutConstraint *topConstrain = [NSLayoutConstraint
+                                        constraintWithItem: newView
+                                        attribute: NSLayoutAttributeTop
+                                        relatedBy: NSLayoutRelationEqual
+                                        toItem: contentView
+                                        attribute: NSLayoutAttributeTop multiplier: 1 constant:0];
+    NSLayoutConstraint *bottomConstrain = [NSLayoutConstraint
+                                        constraintWithItem: newView
+                                        attribute: NSLayoutAttributeBottom
+                                        relatedBy: NSLayoutRelationEqual
+                                        toItem: contentView
+                                        attribute: NSLayoutAttributeBottom multiplier: 1 constant:0];
+    NSLayoutConstraint *leadingConstrain = [NSLayoutConstraint
+                                        constraintWithItem: newView
+                                        attribute: NSLayoutAttributeLeading
+                                        relatedBy: NSLayoutRelationEqual
+                                        toItem: contentView
+                                        attribute: NSLayoutAttributeLeading multiplier: 1 constant:0];
+    NSLayoutConstraint *ttrailingConstrain = [NSLayoutConstraint
+                                        constraintWithItem: newView
+                                        attribute: NSLayoutAttributeTrailing
+                                        relatedBy: NSLayoutRelationEqual
+                                        toItem: contentView
+                                        attribute: NSLayoutAttributeTrailing multiplier: 1 constant:0];
+    [contentView addConstraints:@[topConstrain, bottomConstrain, leadingConstrain, ttrailingConstrain]];
 }
 
 @end

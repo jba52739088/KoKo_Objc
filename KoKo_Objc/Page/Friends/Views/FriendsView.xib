@@ -2,17 +2,18 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FriendsView">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FriendsView" customModule="KoKo_Objc" customModuleProvider="target">
             <connections>
                 <outlet property="btnAddFriend" destination="c1h-c7-iUa" id="SXS-iy-8sG"/>
                 <outlet property="contentView" destination="iN0-l3-epB" id="qev-xr-yFq"/>
                 <outlet property="searchBar" destination="Xxt-lH-cPa" id="hiP-Df-n1s"/>
-                <outlet property="tableView" destination="BHA-56-mWH" id="5lS-EZ-4CB"/>
+                <outlet property="tableView" destination="BHA-56-mWH" id="tyw-ho-QlF"/>
                 <outlet property="viewContent" destination="Kz7-oa-EE7" id="hNI-cB-dEI"/>
                 <outlet property="viewSearch" destination="ADi-fF-2Dx" id="7yS-Gv-0E2"/>
             </connections>
@@ -35,7 +36,7 @@
                         </button>
                         <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="想轉一筆給誰呢？" translatesAutoresizingMaskIntoConstraints="NO" id="Xxt-lH-cPa">
                             <rect key="frame" x="30" y="15" width="315" height="36"/>
-                            <textInputTraits key="textInputTraits"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="done"/>
                         </searchBar>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

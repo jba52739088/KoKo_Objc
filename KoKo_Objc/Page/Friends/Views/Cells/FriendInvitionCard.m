@@ -18,6 +18,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
     
+    [self setShadow];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -39,6 +40,15 @@
     [UIView animateWithDuration: 0.3 animations:^{
         [self layoutIfNeeded];
     }];
+}
+
+- (void)setShadow {
+    self.viewCard.layer.shadowOpacity = 0.1f;
+    self.viewCard.layer.shadowOffset = CGSizeMake(2.5f, 2.5f);
+    self.viewCard.layer.shadowRadius = 3.0f;
+    self.viewCard.layer.shadowColor = UIColor.blackColor.CGColor;
+    self.viewCard.layer.masksToBounds = NO;
+    self.viewCard.clipsToBounds = NO;
 }
 
 @end

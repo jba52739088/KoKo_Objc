@@ -13,8 +13,10 @@ const CGFloat tabBarHeight = 54.0;
 
 -(CGSize)sizeThatFits:(CGSize)size
 {
+    UIWindow *window = UIApplication.sharedApplication.windows.firstObject;
+    CGFloat bottomPadding = window.safeAreaInsets.bottom;
     CGSize sizeThatFits = [super sizeThatFits:size];
-    sizeThatFits.height = tabBarHeight;
+    sizeThatFits.height = tabBarHeight + bottomPadding;
 
     return sizeThatFits;
 }

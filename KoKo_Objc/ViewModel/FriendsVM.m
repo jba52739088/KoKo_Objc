@@ -43,7 +43,7 @@ APIManager *apiManagerInFriends;
         [self requestOnlyFriend:^(NSMutableArray<Friend *> *_Nonnull thisList) {
             completion(thisList);
         }];
-    }else if (type == FriendAndInvition) {
+    }else {
         [self requestFriendAndInvition:^(NSMutableArray<Friend *> *_Nonnull thisList) {
             completion(thisList);
         }];
@@ -88,11 +88,20 @@ APIManager *apiManagerInFriends;
 }
 
 -(void)requestFriendAndInvition: (void (^_Nonnull)(NSMutableArray<Friend *> *_Nonnull))completion {
+    dispatch_group_t apiGroup = dispatch_group_create();
+    __block NSMutableArray<Friend *> *list;
+    
+    dispatch_group_enter(apiGroup);
     [self getFriendList_3:^(NSMutableArray<Friend *> *_Nonnull thisList) {
         NSLog(@"Finished request getFriendList_3");
-        [apiManagerInFriends setFiendList:thisList];
-        completion(thisList);
+        list = thisList;
+        dispatch_group_leave(apiGroup);
     }];
+    
+    dispatch_group_notify(apiGroup, dispatch_get_main_queue(), ^{
+        [apiManagerInFriends setFiendList:list];
+        completion(list);
+    });
 }
 
 -(void)getFriendList_1: (void (^_Nonnull)(NSMutableArray<Friend *> *_Nonnull))completion {

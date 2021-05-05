@@ -24,7 +24,7 @@ NSString *const toUrlString[APIInfoCount] = {
 @implementation APIManager
 
 +(id)shared{
-    [_friendList addObject: [Friend new]];
+    
     static APIManager *sharedManager = nil;
     static dispatch_once_t onceToken;
     
@@ -35,12 +35,12 @@ NSString *const toUrlString[APIInfoCount] = {
     return sharedManager;
 }
 
-DemoType *_demoType;
+DemoType _demoType;
 User *_user;
 NSMutableArray<Friend *> *_friendList;
 
 -(DemoType) demoType {
-    return *_demoType;
+    return _demoType;
 }
 
 -(User *) user {
@@ -59,7 +59,7 @@ NSMutableArray<Friend *> *_friendList;
     _friendList = list;
 }
 
--(void)setDemoType: (DemoType *_Nullable)type {
+-(void)setDemoType: (DemoType)type {
     _demoType = type;
 }
 

@@ -10,11 +10,11 @@
 #import "User.h"
 #import "Friend.h"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, DemoType) {
     EmptyFriend = 0,
     OnlyFriend = 1,
     FriendAndInvition = 2
-} DemoType;
+};
 
 
 
@@ -40,7 +40,7 @@ extern NSString * _Nonnull const toUrlString[APIInfoCount];
 //-(void)getRequest:(NSString *)url type:(DemoType *)Type success:(void (^)(id response, id error))success failure:(void (^)(NSError *error))failure;
 -(void)setUser: (User *_Nullable)user;
 -(void)setFiendList: (NSMutableArray<Friend *> *_Nonnull)list;
--(void)setDemoType: (DemoType *_Nullable)type;
+-(void)setDemoType: (DemoType)type;
 
 -(void)getUserDataWithCompletionHandler:(void (^_Nonnull)(User *_Nullable))completion;
 -(void)getFriendList_1_withCompletionHandler:(void (^_Nonnull)(NSMutableArray<Friend *> *_Nonnull))completion;

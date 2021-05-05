@@ -59,7 +59,7 @@
 
     
     self.tabBar.translucent = NO;
-    
+    self.delegate = self;
     UIImage *_tabBarImage = [UIImage imageNamed:@"imgTabbarBg"];
     self.tabBar.backgroundImage = [UIImage new];
     self.tabBar.shadowImage = [UIImage new];
@@ -114,6 +114,15 @@ NSString *const toImageName[TabBarItemCount] = {
   [Manage] = @"icTabbarManageOff",
   [Setting] = @"icTabbarSettingOff",
 };
-//#define TabBarItemsImage(enum) [@[@"icTabbarProductsOff",@"icTabbarFriendsOn",@"icTabbarHomeOff",@"icTabbarManageOff",@"icTabbarSettingOff"]
+
+
+// MARK: - UITabBarControllerDelegate
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController {
+    if (viewController.title == toString[Home]) {
+        [self.navigationController dismissViewControllerAnimated:true completion:nil];
+    }
+}
+
 
 @end

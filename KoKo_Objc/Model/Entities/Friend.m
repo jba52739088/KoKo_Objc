@@ -10,7 +10,7 @@
 @implementation Friend
 
 NSString *friendName;
-NSNumber *status;
+NSInteger *status;
 NSString *isTop;
 NSString *fid;
 NSString *updateDate;
@@ -18,7 +18,7 @@ NSString *updateDate;
 - (instancetype)initWithDictionary:(NSDictionary*)dictionary {
     if (self = [super init]) {
         self.friendName = dictionary[@"name"];
-        self.status = dictionary[@"status"];
+        self.status = [dictionary[@"status"] integerValue];
         self.isTop = dictionary[@"isTop"];
         self.fid = dictionary[@"fid"];
         self.updateDate = dictionary[@"updateDate"];

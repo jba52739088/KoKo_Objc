@@ -12,7 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Friend : NSObject
 
 @property (nullable, nonatomic, copy)   NSString *friendName;
-@property (nullable, nonatomic, copy)   NSNumber *status;
+@property (nonatomic)   NSInteger *status;
 @property (nullable, nonatomic, copy)   NSString *isTop;
 @property (nullable, nonatomic, copy)   NSString *fid;
 @property (nullable, nonatomic, copy)   NSString *updateDate;

@@ -11,6 +11,7 @@
 
 @implementation FriendsView
 
+id<FriendsViewDelegate> delegate;
 NSMutableArray<Friend *> *friendList;
 NSMutableArray<Friend *> *filiterList;
 UIRefreshControl *refreshControl;
@@ -35,16 +36,25 @@ BOOL isSearching = false;
     return self;
 }
 
+//-(void)configFriendsViewList: (NSMutableArray<Friend *> *)list delegate: (id<FriendsViewDelegate>)delegate {
 -(void)configFriendsViewList: (NSMutableArray<Friend *> *)list {
-    friendList = list;
-    [self.tableView reloadData];
     [refreshControl endRefreshing];
+    [friendList removeAllObjects];
+    friendList = list;
+    [self searchBar: self.searchBar textDidChange: self.searchBar.text];
+    [UIView performWithoutAnimation:^{
+        [[self tableView]beginUpdates];
+        [self.tableView reloadSections:[[NSIndexSet alloc] initWithIndex:0] withRowAnimation:UITableViewRowAnimationNone];
+        [[self tableView]endUpdates];
+    }];
     isRefreshing = false;
 }
 
 // MARK: - private
 
 -(void)initView {
+    friendList = [NSMutableArray<Friend *> new];
+    filiterList = [NSMutableArray<Friend *> new];
     [[NSBundle mainBundle] loadNibNamed: @"FriendsView" owner: self options: nil];
     [self addSubview: self.contentView];
     self.contentView.frame = self.frame;
@@ -76,8 +86,7 @@ BOOL isSearching = false;
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     FriendCell *cell = (FriendCell *) [tableView dequeueReusableCellWithIdentifier: @"cell"];
-    if (cell == nil) {
-        cell = [[FriendCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier: @"cell"];
+    if (cell != nil) {
         NSMutableArray<Friend *> *list = !isSearching ? friendList : filiterList;
         [cell configFriendCellData: list[indexPath.row]];
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
@@ -112,5 +121,8 @@ BOOL isSearching = false;
     [self.delegate shouldMoveTop: false forView: self];
 }
 
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [[UIApplication sharedApplication] sendAction:@selector(resignFirstResponder) to:nil from:nil forEvent:nil];
+}
 
 @end

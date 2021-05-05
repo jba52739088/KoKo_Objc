@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 -(void)configDataList: (NSMutableArray<Friend *>*)list;
+//-(void)configDataList: (NSMutableArray<Friend *>*)list delegate: (id<InvitionViewDelegate>)delegate;
 -(BOOL) isExpanded_;
 @end
 

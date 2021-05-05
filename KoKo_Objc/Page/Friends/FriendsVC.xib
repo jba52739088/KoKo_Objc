@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -14,9 +15,9 @@
                 <outlet property="btnName" destination="Kyg-y1-M4i" id="nTz-vC-tt2"/>
                 <outlet property="categoryView" destination="1xw-CS-CLl" id="KEp-Hc-hJ9"/>
                 <outlet property="contentView" destination="7Rm-os-dmH" id="DRe-Z4-B3w"/>
-                <outlet property="friendView" destination="6Gp-NR-cwt" id="IwD-if-K18"/>
+                <outlet property="friendViewContent" destination="6Gp-NR-cwt" id="GU1-qE-gfU"/>
                 <outlet property="heightInvitionView" destination="qHN-kN-daH" id="fHD-uk-ALL"/>
-                <outlet property="invitionView" destination="QcM-MJ-kBo" id="iOB-Ci-Td1"/>
+                <outlet property="invitionViewContent" destination="QcM-MJ-kBo" id="Gwf-qi-luA"/>
                 <outlet property="minYTopView" destination="IHO-LW-YdB" id="evD-8z-6aU"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewDot" destination="6pB-OJ-8t2" id="ADW-ap-POG"/>
@@ -95,7 +96,7 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FYs-b0-nHw">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="48"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcM-MJ-kBo" customClass="FriendInvitionView" customModule="KoKo_Demo" customModuleProvider="target">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QcM-MJ-kBo">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="14"/>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
@@ -197,9 +198,9 @@
                                                         <constraint firstAttribute="height" constant="1" id="zms-bB-bcD"/>
                                                     </constraints>
                                                 </view>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B45-cB-DKO">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B45-cB-DKO" customClass="RoundRectView">
                                                     <rect key="frame" x="35" y="30" width="20" height="4"/>
-                                                    <color key="backgroundColor" name="hotPink"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="4" id="9sg-U3-scb"/>
                                                         <constraint firstAttribute="width" constant="20" id="RPo-TJ-5L7"/>
@@ -207,6 +208,9 @@
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                             <real key="value" value="2"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                                            <color key="value" name="hotPink"/>
                                                         </userDefinedRuntimeAttribute>
                                                     </userDefinedRuntimeAttributes>
                                                 </view>
@@ -244,7 +248,7 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Rm-os-dmH" userLabel="contentView">
                     <rect key="frame" x="0.0" y="128" width="414" height="768"/>
                     <subviews>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Gp-NR-cwt" userLabel="friendView" customClass="FriendsView" customModule="KoKo_Demo" customModuleProvider="target">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Gp-NR-cwt" userLabel="friendView">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="768"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
@@ -281,13 +285,13 @@
             <color red="0.27799999713897705" green="0.27799999713897705" blue="0.27799999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="hotPink">
-            <color red="0.92500001192092896" green="0.0" blue="0.54900002479553223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.92500000000000004" green="0.0" blue="0.54900000000000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="white">
             <color red="0.93699997663497925" green="0.93699997663497925" blue="0.93699997663497925" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="whiteTwo">
-            <color red="0.98799997568130493" green="0.98799997568130493" blue="0.98799997568130493" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

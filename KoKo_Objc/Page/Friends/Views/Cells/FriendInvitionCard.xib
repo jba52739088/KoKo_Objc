@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,7 +17,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3o-gX-qd8">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3o-gX-qd8" customClass="RoundRectView">
                         <rect key="frame" x="30" y="5" width="354" height="70"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="imgFriendsFemaleDefault" translatesAutoresizingMaskIntoConstraints="NO" id="lWF-ah-Hty">
@@ -81,6 +82,9 @@
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                 <real key="value" value="6"/>
                             </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="bgColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </view>
                 </subviews>
@@ -93,14 +97,14 @@
             </tableViewCellContentView>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
-                <outlet property="btnAgree" destination="LkF-pO-hJm" id="ZiG-j2-yUa"/>
-                <outlet property="btnDelete" destination="fCN-A3-mCW" id="rjq-dS-R8p"/>
-                <outlet property="content" destination="cm2-WH-5kJ" id="ECn-rR-GeU"/>
-                <outlet property="imgAvatar" destination="lWF-ah-Hty" id="HHz-WF-wU9"/>
-                <outlet property="lbName" destination="oQK-RI-zYX" id="np0-N8-0Pp"/>
-                <outlet property="leadingCard" destination="jTi-6z-WKW" id="Uun-sS-xqj"/>
-                <outlet property="traillingCard" destination="Xgc-RV-IdP" id="9Yw-wx-HUU"/>
-                <outlet property="viewCard" destination="Z3o-gX-qd8" id="qZt-eB-ZRZ"/>
+                <outlet property="btnAgree" destination="LkF-pO-hJm" id="gad-He-9fL"/>
+                <outlet property="btnDelete" destination="fCN-A3-mCW" id="kqt-OZ-Fxk"/>
+                <outlet property="content" destination="cm2-WH-5kJ" id="VfG-6u-xth"/>
+                <outlet property="imgAvatar" destination="lWF-ah-Hty" id="zgz-3z-Pom"/>
+                <outlet property="lbName" destination="oQK-RI-zYX" id="Wi9-2y-oDt"/>
+                <outlet property="leadingCard" destination="jTi-6z-WKW" id="in5-Ta-TpW"/>
+                <outlet property="traillingCard" destination="Xgc-RV-IdP" id="62u-yN-qcm"/>
+                <outlet property="viewCard" destination="Z3o-gX-qd8" id="qp3-a9-tr8"/>
             </connections>
             <point key="canvasLocation" x="-222" y="-18"/>
         </tableViewCell>
